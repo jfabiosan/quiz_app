@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/question.dart';
+import './question.dart';
+import './question_box.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -36,6 +37,7 @@ class _HomeState extends State<Home> {
     },
   ];
   int result = 0;
+  final int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Questions'),
       ),
-      body: const QuestionBox(_questions),
+      body: QuestionBox(_index, _questions),
     );
   }
 }
