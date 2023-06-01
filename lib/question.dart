@@ -1,6 +1,6 @@
 class Question {
-  late String questions;
+  late String question;
   late int value;
 
-  Question(this.questions, this.value);
+  Question(this.question, this.value);
 }

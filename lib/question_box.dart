@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class QuestionBox extends StatelessWidget {
   final dynamic _index;
   final dynamic _questions;
+  final Function nextQuestion;
 
-  const QuestionBox(this._index, this._questions, {super.key});
+  const QuestionBox(this._index, this._questions, this.nextQuestion,
+      {super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,7 +17,8 @@ class QuestionBox extends StatelessWidget {
         Row(
           children: <Widget>[
             ElevatedButton(
-              onPressed: null,
+              onPressed: () =>
+                  nextQuestion(_questions[_index][_index][0].value),
               child: Text(_questions[_index][_index][0].question),
             )
           ],
@@ -26,7 +29,8 @@ class QuestionBox extends StatelessWidget {
         Row(
           children: <Widget>[
             ElevatedButton(
-              onPressed: null,
+              onPressed: () =>
+                  nextQuestion(_questions[_index][_index][1].value),
               child: Text(_questions[_index][_index][1].question),
             )
           ],

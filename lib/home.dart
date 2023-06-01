@@ -37,7 +37,14 @@ class _HomeState extends State<Home> {
     },
   ];
   int result = 0;
-  final int _index = 0;
+  int _index = 0;
+
+  void nextQuestion(int value) {
+    setState(() {
+      _index++;
+      result = result + value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +52,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Questions'),
       ),
-      body: QuestionBox(_index, _questions),
+      body: QuestionBox(_index, _questions, nextQuestion),
     );
   }
 }
