@@ -52,7 +52,9 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Questions'),
       ),
-      body: QuestionBox(_index, _questions, nextQuestion),
+      body: _index < _questions.length
+          ? QuestionBox(_index, _questions, nextQuestion)
+          : const Text('Acabou'),
     );
   }
 }

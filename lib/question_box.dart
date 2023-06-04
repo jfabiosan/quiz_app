@@ -12,26 +12,47 @@ class QuestionBox extends StatelessWidget {
     return Column(
       children: <Widget>[
         const Row(
-          children: <Widget>[Text('Selecione a afirmação correta')],
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                'Selecione a afirmação correta',
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () =>
-                  nextQuestion(_questions[_index][_index][0].value),
-              child: Text(_questions[_index][_index][0].question),
+            Flexible(
+              child: ElevatedButton(
+                onPressed: () =>
+                    nextQuestion(_questions[_index][_index][0].value),
+                child: Text(_questions[_index][_index][0].question),
+              ),
             )
           ],
         ),
         const Row(
-          children: <Widget>[Text('OU')],
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                'OU',
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () =>
-                  nextQuestion(_questions[_index][_index][1].value),
-              child: Text(_questions[_index][_index][1].question),
+            Flexible(
+              child: ElevatedButton(
+                onPressed: () =>
+                    nextQuestion(_questions[_index][_index][1].value),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                child: Text(_questions[_index][_index][1].question),
+              ),
             )
           ],
         ),
