@@ -25,7 +25,7 @@ class Result extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () => reset(),
-              child: const Text('voltar'),
+              child: const Text('Voltar'),
             ),
           ],
         ),

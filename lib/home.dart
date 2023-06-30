@@ -56,18 +56,18 @@ class _HomeState extends State<Home> {
 
   String getMessage() {
     if (result < 2) {
-      return 'Ooops... estude mais!';
+      return 'Ooops... Estude mais!';
     } else if (result < 3) {
-      return 'Quase acertou tudo';
+      return 'Quase acertou!';
     }
-    return 'Parabens... acertou tudo';
+    return 'Parabéns... Acertou tudo!';
   }
 
   String _getTitle() {
     if (_index < 4) {
-      return 'Question ${_index + 1}';
+      return 'Pergunta ${_index + 1}';
     } else {
-      return 'Result';
+      return 'Resultado';
     }
   }
 
